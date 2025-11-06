@@ -9,7 +9,7 @@
 %	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 %	copies of the Software, and to permit persons to whom the Software is
 %	furnished to do so, subject to the following conditions:
-%	
+%
 %	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 %	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 %	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -17,7 +17,7 @@
 %	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 %	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 %	THE SOFTWARE.
-%	
+%
 %
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 
@@ -48,7 +48,7 @@
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
 
 %other packages for formatting
 \RequirePackage{color}
@@ -63,7 +63,7 @@
 \usepackage{enumitem}
 
 % centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
@@ -72,11 +72,11 @@
 \setlength{\fullcollw}{0.47\textwidth}
 
 %custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
+%CV Sections inspired by:
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
@@ -100,27 +100,38 @@
 
 % job listing environments
 \newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    }
+    {
+    }
 
 \newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
+    {
+    \begin{tabularx}{\linewidth}{@{}l X r@{}}
+    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+    \end{tabularx}
+    \begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
+    }
+    {
+    \end{itemize}
+    \end{minipage}
+    }
 
+\newenvironment{projectentry}[2]
+    {
+    \begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \textbf{#1} & \hfill #2 \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=1pt,label=--]
+    }
+    }
+    {
+    \end{itemize}
+    }
 
 
 %----------------------------------------------------------------------------------------
@@ -129,87 +140,116 @@
 \begin{document}
 
 % non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
-%	TITLE
+%	TITLE (Header)
 %----------------------------------------------------------------------------------------
-
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{VARUN KV} \\[7.5pt]
+\href{https://github.com/}{\raisebox{-0.05\height}\faGithub\ github.com} \ $|$ \
+\href{https://linkedin.com/in/varun282004}{\raisebox{-0.05\height}\faLinkedin\ varun282004} \ $|$ \
+\raisebox{-0.05\height}\faMapMarker\ Bengaluru, Karnataka \ $|$ \
+\href{mailto:varunvishwanath1@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ varunvishwanath1@gmail.com} \ $|$ \
+\href{tel:+919513475397}{\raisebox{-0.05\height}\faMobile \ +91 95134 75397} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% SUMMARY
+%----------------------------------------------------------------------------------------
+\section{Profile Summary}
+[cite_start]Full-Stack Mobile Developer specializing in high-performance \textbf{Flutter} apps (Android/iOS) and advanced state management (Provider/GetX), seamlessly integrating services via \textbf{REST APIs} and \textbf{Java Networking} backends[cite: 21]. [cite_start]Proficient in modern mobile architecture and \textbf{Generative AI} concepts, focused on building user-centric, scalable applications with clean code and a demonstrated ability to transition research into practical, market-ready solutions[cite: 22].
+
+%----------------------------------------------------------------------------------------
+% EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Nov 2024 - Present & Master of Computer Applications (\textbf{Generative AI}) at \textbf{Alliance University} \hfill \normalsize (CGPA: 8.75) \\
+Nov 2021 - July 2024 & Bachelor of Computer Applications at \textbf{Visveswarapura College of Science} \hfill \normalsize (CGPA: 8.9) \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
-%Experience
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+\begin{joblong}{Mobile Application Developer (Android \& iOS) Intern | HR Labs - Internship}{Nov 2024 - June 2025}
+[cite_start]\item Developed and maintained cross-platform mobile applications using \textbf{Flutter} and \textbf{Dart} for Android and iOS[cite: 24].
+[cite_start]\item Integrated \textbf{RESTful APIs} built with Spring Boot and used Postman for API testing and validation[cite: 24].
+[cite_start]\item Implemented real-time communication with STOMP Dart client for \textbf{WebSocket}-based socket connections[cite: 24].
+[cite_start]\item Configured and deployed push notifications using \textbf{Firebase Cloud Messaging (FCM)} to enhance user engagement[cite: 24].
 \end{joblong}
-  
-%Projects
+
+\begin{joblong}{Android Development Intern | CodeClause-Internship}{May 2024 - June 2024}
+[cite_start]\item Developed a To-Do application using \textbf{Flutter} and \textbf{Dart} with responsive UI and smooth user interactions[cite: 24].
+[cite_start]\item Implemented local data storage and optimized app performance for seamless task management[cite: 24].
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
+% PROJECTS
+%----------------------------------------------------------------------------------------
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+\begin{projectentry}{U-Net for Geospatial Semantic Segmentation: Deforestation Mapping | \emph{Python, Keras, NumPy, OpenCV}}{}
+[cite_start]\item Implemented and trained a \textbf{U-Net CNN} model for pixel-level semantic segmentation of satellite images[cite: 24].
+[cite_start]\item Designed the U-Net architecture, leveraging \textbf{skip connections} to preserve spatial detail and achieve precise boundary localization for deforested regions[cite: 24].
+[cite_start]\item Achieved high segmentation accuracy, validated by an \textbf{Intersection over Union (IoU)} score of approx \textbf{0.9412} on unseen test data[cite: 24].
+[cite_start]\item Proficiency demonstrated in \textbf{Keras} for model building and training, and \textbf{NumPy} for data manipulation[cite: 24].
+\end{projectentry}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+\begin{projectentry}{Network Utility Tool Using Java | \emph{Java Networking Library, Provider package, Flutter for frontend}}{}
+[cite_start]\item Developed a network utility tool with a \textbf{Flutter} frontend and \textbf{Java Networking Library} backend to analyze and monitor network connectivity[cite: 24].
+[cite_start]\item Integrated the \textbf{Provider} package for state management, enabling responsive UI updates and efficient communication between the Flutter interface and Java services[cite: 24].
+\end{projectentry}
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+\begin{projectentry}{Mobile Application for Alliance Library | \emph{Node.js, Flutter Framework, Google Cloud API}}{}
+[cite_start]\item Built a cross-platform library management application using \textbf{Flutter} and \textbf{Node.js}, integrating \textbf{Google Cloud APIs} to transform Google Sheets data into \textbf{JSON} for real-time access[cite: 24].
+[cite_start]\item Implemented cloud-based configuration and API integration to streamline data synchronization, enabling efficient library resource tracking and a seamless user experience[cite: 24].
+\end{projectentry}
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+\begin{projectentry}{Firebase Authentication Application | \emph{Firebase, Flutter Framework, Integrated Authentication Providers}}{}
+[cite_start]\item Developed a cross-platform authentication app using the \textbf{Flutter} framework and \textbf{Firebase Authentication}, integrating multiple login providers including Google, Facebook, GitHub, and mobile number verification[cite: 24].
+[cite_start]\item Configured secure \textbf{Firebase backend services} with real-time authentication state management to ensure smooth user sessions and reliable cross-device access[cite: 24].
+\end{projectentry}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
-\section{Skills}
+\section{Technical Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+\textbf{Languages \& Frameworks} & \normalsize{Python, Java, SQL, \textbf{Dart}, \textbf{Flutter}, Go} \\
+\textbf{State Management} & \normalsize{\textbf{Provider}, Riverpod, Getx} \\
+\textbf{Backend Management} & \normalsize{\textbf{Firebase} (Auth, Firestore, Cloud Messaging), \textbf{REST APIs}, My SQL, Postgresql} \\
+\textbf{Tools \& Platforms} & \normalsize{Git/GitHub, Android Studio, VS Code, Postman, Figma} \\
+\textbf{Python Libraries} & \normalsize{\textbf{OpenCV}, \textbf{TensorFlow}, Pandas, Matplotlib, \textbf{NumPy}, PyTorch, SciPy, Seaborn, Plotly} \\
+\textbf{Others} & \normalsize{UI/UX design, Cross-platform Mobile Development (Android, iOS), API Integration, Agile/Scrum} \\
 \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	CERTIFICATIONS
+%----------------------------------------------------------------------------------------
+\section{Certifications}
+\begin{itemize}[nosep, leftmargin=1em, itemsep=3pt,label=--]
+[cite_start]\item \textbf{Flutter and Dart}: Developing iOS, Android, and Mobile Apps [cite: 25]
+[cite_start]\item \textbf{Generative AI}: Introduction and Applications [cite: 26]
+[cite_start]\item \textbf{Neural Networks and Deep Learning} [cite: 27]
+[cite_start]\item \textbf{Machine Learning}: Classification [cite: 28, 31]
+[cite_start]\item Fundamentals of \textbf{Reinforcement Learning} [cite: 29]
+[cite_start]\item Machine Learning and \textbf{NLP} Basics [cite: 30]
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS (Empty as none were provided)
+%----------------------------------------------------------------------------------------
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
 
 \vfill
 \center{\footnotesize Last updated: \today}
